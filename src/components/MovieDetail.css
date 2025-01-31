@@ -1,0 +1,27 @@
+.movie-detail {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .movie-detail h1 {
+    color: #333;
+  }
+  
+  .movie-detail p {
+    color: #555;
+    font-size: 16px;
+  }
+  
+  .movie-detail button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .movie-detail button:hover {
+    background-color: #0056b3;
+  }
+  

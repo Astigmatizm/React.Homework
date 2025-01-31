@@ -1,0 +1,28 @@
+.movie-list {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+  
+  .movie-list h1 {
+    color: #333;
+  }
+  
+  .movie-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .movie-list li {
+    margin: 10px 0;
+  }
+  
+  .movie-link {
+    text-decoration: none;
+    color: #0066cc;
+    font-size: 18px;
+  }
+  
+  .movie-link:hover {
+    text-decoration: underline;
+  }
+  
