@@ -1,0 +1,29 @@
+.weather-app {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  margin-top: 50px;
+}
+
+.weather-app input {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.weather-app button {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.weather-app button:hover {
+  background-color: #45a049;
+}
+
+.weather-app h2 {
+  margin: 20px 0;
+}
