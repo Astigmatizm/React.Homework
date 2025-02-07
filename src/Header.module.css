@@ -1,0 +1,46 @@
+*{
+    padding: 0px;
+    margin: 0px;
+}
+
+.divMain{
+    background-color: rgb(67, 67, 185);
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgb(red, green, blue);
+    color:white;
+    width: 100%;
+}
+
+.imgLogo{
+    width: 75px;
+    height: auto;
+}
+
+.navbar{
+    font-size: 20px;
+    display: flex;
+    gap: 40px;
+    cursor: pointer;
+}
+
+span:hover {
+    color: rgb(0, 0, 0);
+}
+  
+.btnSignup{
+    background-color: rgb(48, 48, 131);
+    color: white;
+    font-size: 15px;
+    width: 80px;
+    height: 40px;
+    border-radius:15px ;
+    border: none;
+}
+.btnSignup:hover{
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
