@@ -1,0 +1,31 @@
+.input-text{
+    width: 170px;
+    height: 26.99px;
+    font-size: 16px;
+    background-color: white;
+    border: 1px solid rgb(112, 68, 105);
+    margin-right: 2px;
+}
+    
+.input-text:focus{
+    width: 170px;
+    height: 26.99px;
+    font-size: 16px;
+    border: 2px dashed rgb(160, 21, 21);
+}
+.button-text{
+    width: 45px;
+    height: 29px;
+    background-color: black;
+    border: 1px solid rgb(95, 58, 89);
+    color: white;
+    margin-right: 2px;
+
+}
+.button-text:hover{
+    width: 45px;
+    height: 29px;
+    background-color: rgb(112, 68, 105);
+    border: 1px solid rgb(112, 68, 105);
+    color: rgb(0, 0, 0);
+}
