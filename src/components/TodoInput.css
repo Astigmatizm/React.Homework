@@ -1,17 +1,22 @@
 .input-text{
     width: 170px;
-    height: 26.99px;
+    height: 29px;
     font-size: 16px;
     background-color: white;
-    border: 1px solid rgb(112, 68, 105);
-    margin-right: 2px;
+    border: 2px solid #ccc; 
+    padding: 10px; 
+    outline: none; 
+    box-sizing: border-box; 
+    transition: border 0.2s ease-in-out; 
 }
     
 .input-text:focus{
-    width: 170px;
-    height: 26.99px;
     font-size: 16px;
-    border: 2px dashed rgb(160, 21, 21);
+    border: 2px solid rgb(95, 58, 89); 
+    box-shadow: 0 0 8px rgb(121, 74, 114); 
+}
+.input-text:hover{
+    box-shadow: 0 0 8px rgb(121, 74, 114); 
 }
 .button-text{
     width: 45px;
@@ -20,12 +25,15 @@
     border: 1px solid rgb(95, 58, 89);
     color: white;
     margin-right: 2px;
-
+    outline: none; 
+    box-sizing: border-box; 
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 .button-text:hover{
     width: 45px;
     height: 29px;
     background-color: rgb(112, 68, 105);
     border: 1px solid rgb(112, 68, 105);
+    box-shadow: 0 0 8px rgb(121, 74, 114); 
     color: rgb(0, 0, 0);
 }

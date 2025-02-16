@@ -1,0 +1,70 @@
+.button-textEdit{
+    width: 45px;
+    height: 29px;
+    background-color: black;
+    border: 1px solid black;
+    color: white;
+    margin-right: 2px;
+    margin-left: 10px;
+    border-radius: 15px;
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+.button-textEdit:hover{
+    background-color: white;
+    border: white;
+    color: black;
+}
+.button-textDelete{
+  width: 60px;
+  height: 29px;
+  background-color: black;
+  border: 1px solid black;
+  color: white;
+  margin-right: 2px;
+  margin-left: 10px;
+  border-radius: 15px;
+  transition: background 0.3s ease-in-out, color 0.3s ease-in-out, border 0.3s ease-in-out;
+}
+.button-textDelete:hover{
+  background-color: white;
+  border: white;
+  color: black;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #45284a; 
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
+
+li input[type="checkbox"] {
+  margin-right: 10px;
+  transform: scale(1.2);
+  accent-color: rgb(0, 0, 0); 
+}
+
+li span {
+  flex-grow: 1;
+  margin-right: 10px;
+  font-size: 18px;
+  color: white;
+  text-align: left;
+}
+
+li .button-container {
+  display: flex;
+  gap: 10px;
+}
+.completed {
+  text-decoration: line-through;
+  color: #888;
+}
