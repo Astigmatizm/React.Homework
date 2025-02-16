@@ -1,64 +1,97 @@
-import React, { useState } from "react";
-import TodoInput from "./components/TodoInput";
-import TodoList from "./components/TodoList";
-import "./App.css";
+import React, { useState, createContext, useContext } from 'react';
 
-function App() {
-  const [todos, setTodos] = useState([]); 
-  const [editingIndex, setEditingIndex] = useState(null);
+const TodoContext = createContext();
 
-  function addTodo(task) {
-    setTodos([...todos, { text: task, done: false }]); 
-  }
+const TodoProvider = ({ children }) => {
+    const [todos, setTodos] = useState([]);
+    const [editingIndex, setEditingIndex] = useState(null);
 
-  function updateTodo(task) {
-    setTodos(
-      todos.map((todo, index) =>
-        index === editingIndex ? { ...todo, text: task } : todo
-      )
+    const addTodo = (task) => {
+        setTodos([...todos, { text: task, done: false }]);
+    };
+
+    const updateTodo = (task) => {
+        setTodos(
+            todos.map((todo, index) => (index === editingIndex ? { ...todo, text: task } : todo))
+        );
+        setEditingIndex(null);
+    };
+
+    const editTodo = (index) => {
+        setEditingIndex(index);
+    };
+
+    const toggleTask = (index) => {
+        setTodos(
+            todos.map((todo, i) => (i === index ? { ...todo, done: !todo.done } : todo))
+        );
+    };
+
+    const deleteTask = (index) => {
+        setTodos(todos.filter((_, i) => i !== index));
+    };
+
+    return (
+        <TodoContext.Provider value={{ todos, addTodo, updateTodo, editTodo, toggleTask, deleteTask, editingIndex, setEditingIndex }}>
+            {children}
+        </TodoContext.Provider>
     );
-    setEditingIndex(null);
-  }
+};
 
-  function editTodo(index) {
-    setEditingIndex(index);
-  }
+const TodoInput = () => {
+    const { addTodo, updateTodo, editingIndex, setEditingIndex } = useContext(TodoContext);
+    const [task, setTask] = useState('');
 
-  function toggleTask(index) {
-    setTodos(
-      todos.map((task, i) =>
-        i === index ? { ...task, done: !task.done } : task
-      )
-    );
-  }
+    const handleSubmit = () => {
+        if (editingIndex !== null) {
+            updateTodo(task);
+        } else {
+            addTodo(task);
+        }
+        setTask('');
+    };
 
-  function deleteTask(index) {
-    setTodos(todos.filter((_, i) => i !== index));
-  }
-
-  return (
-    <div className="div-main">
-      <h1>To-Do List</h1>
-      <div className="div-input">
-        {editingIndex === null ? (
-          <TodoInput onSave={addTodo} />
-        ) : (
-          <TodoInput
-            task={todos[editingIndex].text}
-            isEditing={true}
-            onSave={updateTodo}
-            onCancel={() => setEditingIndex(null)}
-          />
-        )}
-      </div>
-
-      {todos.length > 0 && (
-        <div className="div-list">
-          <TodoList todos={todos} onEdit={editTodo} onDelete={deleteTask} onToggle={toggleTask} />
+    return (
+        <div>
+            <input 
+                type='text' 
+                value={task} 
+                onChange={(e) => setTask(e.target.value)} 
+                placeholder='сюда писать надо' 
+            />
+            <button onClick={handleSubmit}>{editingIndex !== null ? 'Обновить' : 'Добавить'}</button>
+            {editingIndex !== null && <button onClick={() => setEditingIndex(null)}>Cancel</button>}
         </div>
-      )}
-    </div>
-  );
-}
+    );
+};
+
+const TodoList = () => {
+    const { todos, editTodo, toggleTask, deleteTask } = useContext(TodoContext);
+
+    return (
+        <ul>
+            {todos.map((todo, index) => (
+                <li key={index} className={todo.done ? 'completed' : ''}>
+                    <input type='checkbox' checked={todo.done} onChange={() => toggleTask(index)} />
+                    <span>{todo.text}</span>
+                    <button onClick={() => editTodo(index)}>Edit</button>
+                    <button onClick={() => deleteTask(index)}>Delete</button>
+                </li>
+            ))}
+        </ul>
+    );
+};
+
+const App = () => {
+    return (
+        <TodoProvider>
+            <div>
+                <h1>To-Do List</h1>
+                <TodoInput />
+                <TodoList />
+            </div>
+        </TodoProvider>
+    );
+};
 
 export default App;
