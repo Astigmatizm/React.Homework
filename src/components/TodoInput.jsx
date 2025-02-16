@@ -23,8 +23,8 @@ return(
         onChange={((e) => setInputValue(e.target.value))}
         type="text"
         className="input-text" />
-        <button onClick={handleSave} className="button-text">{isEditing ? 'Save' : 'Add'}</button>
-        {isEditing && <button onClick={onCancel}>Cancel</button>}
+        <button onClick={handleSave} className="button-text-Add-Save">{isEditing ? 'Save' : 'Add'}</button>
+        {isEditing && <button onClick={onCancel} className="button-text-Cancel">Cancel</button>}
     </>
 )
 

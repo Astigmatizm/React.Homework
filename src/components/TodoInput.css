@@ -18,7 +18,7 @@
 .input-text:hover{
     box-shadow: 0 0 8px rgb(121, 74, 114); 
 }
-.button-text{
+.button-text-Add-Save{
     width: 45px;
     height: 29px;
     background-color: black;
@@ -29,9 +29,24 @@
     box-sizing: border-box; 
     transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
 }
-.button-text:hover{
-    width: 45px;
+.button-text-Add-Save:hover{
+    background-color: rgb(112, 68, 105);
+    border: 1px solid rgb(112, 68, 105);
+    box-shadow: 0 0 8px rgb(121, 74, 114); 
+    color: rgb(0, 0, 0);
+}
+.button-text-Cancel{
+    width: 60px;
     height: 29px;
+    background-color: black;
+    border: 1px solid rgb(95, 58, 89);
+    color: white;
+    margin-right: 1px;
+    outline: none; 
+    box-sizing: border-box; 
+    transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.button-text-Cancel:hover{
     background-color: rgb(112, 68, 105);
     border: 1px solid rgb(112, 68, 105);
     box-shadow: 0 0 8px rgb(121, 74, 114); 
