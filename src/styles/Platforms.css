@@ -1,0 +1,60 @@
+.ide-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 140px; /* Расстояние между иконками */
+  margin-top: -60px;
+}
+
+.ide-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+  
+.ide-icon {
+  width: 80px;
+  height: auto;
+  margin-right: 18px;
+}
+
+
+
+.VSC-text {
+  margin-top: 10px;
+  font-size: 14px;
+  color: white; 
+}
+.VSC-text:hover {
+  color: rgb(49, 175, 224);
+  transition: color 0.3s ease-in-out ;
+  cursor: pointer;
+}
+
+
+
+.VS-text {
+  margin-top: 10px;
+  font-size: 14px;
+  color: white;
+}
+.VS-text:hover {
+  color: rgb(192, 93, 192);
+  transition: color 0.3s ease-in-out ;
+  cursor: pointer;
+}
+
+
+
+.PC-text {
+  margin-top: 10px;
+  font-size: 14px;
+  color: white;
+  margin-right: 7px;
+}
+.PC-text:hover {
+  color: rgb(47, 182, 47);
+  transition: color 0.3s ease-in-out ;
+  cursor: pointer;
+}

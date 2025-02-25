@@ -1,0 +1,8 @@
+.text-effect span {
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .text-effect span:hover {
+    color: #ff0000; /* Здесь можно поменять цвет */
+  }
+  
